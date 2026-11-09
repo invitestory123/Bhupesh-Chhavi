@@ -1,5 +1,5 @@
 import { Phone } from "lucide-react";
-const footerFloral = "https://media.invitestory.in/sage-parchment/src/assets/footer-floral.jpg";
+import footerFloral from "@/assets/footer-floral.jpg";
 import { invitation } from "@/config/invitation";
 import { Reveal } from "./Reveal";
 
@@ -19,7 +19,10 @@ export function SiteFooter() {
         height={912}
         className="absolute inset-0 -z-10 h-full w-full object-cover object-bottom"
       />
-      <div aria-hidden className="absolute inset-0 -z-10 bg-parchment/55" />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-parchment/85 via-parchment/80 to-parchment/95 backdrop-blur-[1px]"
+      />
       <div
         aria-hidden
         className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-parchment to-transparent"
@@ -32,32 +35,42 @@ export function SiteFooter() {
         <div className="mx-auto mt-5 w-24 gold-rule" />
         <p className="mt-6 text-sm text-ink/80">{footer.families}</p>
 
-        {"warmRegards" in footer && Array.isArray(footer.warmRegards) && footer.warmRegards.length > 0 && (
-          <div className="mx-auto mt-6 max-w-md rounded-2xl border border-gold/30 bg-parchment/60 p-5 shadow-sm">
-            <p className="text-[0.68rem] tracking-[0.3em] font-medium text-gold uppercase">
-              With Warm Regards
-            </p>
-            <div className="mt-3 space-y-1.5 text-xs text-ink/80">
-              {footer.warmRegards.map((item: string, idx: number) => (
-                <p key={idx}>{item}</p>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-ink/80">
-          {"familyFlowers" in footer && footer.familyFlowers && (
+        <div className="mx-auto mt-7 max-w-md rounded-2xl border border-gold/45 bg-parchment/90 p-6 shadow-md backdrop-blur-xs">
+          {"warmRegards" in footer && Array.isArray(footer.warmRegards) && footer.warmRegards.length > 0 && (
             <div>
-              <p className="text-[0.62rem] tracking-[0.25em] text-gold uppercase">Family Flowers</p>
-              <p className="mt-1 font-medium">{footer.familyFlowers}</p>
+              <p className="text-[0.7rem] tracking-[0.3em] font-semibold text-gold uppercase">
+                With Warm Regards
+              </p>
+              <div className="mt-3 space-y-1.5 text-xs text-ink/90 font-medium">
+                {footer.warmRegards.map((item: string, idx: number) => (
+                  <p key={idx}>{item}</p>
+                ))}
+              </div>
             </div>
           )}
 
-          {"rsvp" in footer && footer.rsvp && (
-            <div>
-              <p className="text-[0.62rem] tracking-[0.25em] text-gold uppercase">R.S.V.P.</p>
-              <p className="mt-1 font-medium">{footer.rsvp}</p>
-            </div>
+          {((footer as any).familyFlowers || (footer as any).rsvp) && (
+            <>
+              <div className="mx-auto my-5 w-24 gold-rule" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                {"familyFlowers" in footer && footer.familyFlowers && (
+                  <div className="rounded-xl border border-gold/25 bg-parchment-deep/60 p-3">
+                    <p className="text-[0.65rem] tracking-[0.25em] font-semibold text-gold uppercase">
+                      Family Flowers
+                    </p>
+                    <p className="mt-1 font-medium text-ink">{footer.familyFlowers}</p>
+                  </div>
+                )}
+                {"rsvp" in footer && footer.rsvp && (
+                  <div className="rounded-xl border border-gold/25 bg-parchment-deep/60 p-3">
+                    <p className="text-[0.65rem] tracking-[0.25em] font-semibold text-gold uppercase">
+                      R.S.V.P.
+                    </p>
+                    <p className="mt-1 font-medium text-ink">{footer.rsvp}</p>
+                  </div>
+                )}
+              </div>
+            </>
           )}
         </div>
 
@@ -67,7 +80,7 @@ export function SiteFooter() {
               <a
                 key={c.phone}
                 href={`tel:${c.phone}`}
-                className="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-parchment/70 px-5 py-2.5 text-[0.65rem] tracking-[0.2em] text-ink/80 uppercase transition-colors hover:bg-gold/15 active:scale-95"
+                className="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-parchment/90 px-5 py-2.5 text-[0.65rem] tracking-[0.2em] text-ink/80 uppercase transition-colors hover:bg-gold/15 active:scale-95 shadow-xs"
               >
                 <Phone className="size-3.5 text-gold" aria-hidden />
                 {c.name}
@@ -76,15 +89,17 @@ export function SiteFooter() {
           </div>
         )}
 
-        <p className="mt-10 text-[0.6rem] tracking-[0.32em] text-ink/60 uppercase">
-          {couple.hashtag}
-        </p>
+        <div className="mt-8">
+          <span className="inline-block rounded-full border border-gold/50 bg-parchment/90 px-6 py-2 text-xs tracking-[0.28em] font-medium text-pine uppercase shadow-xs">
+            {couple.hashtag}
+          </span>
+        </div>
       </Reveal>
       <a
         href="https://www.instagram.com/invitestory.in/"
         target="_blank"
         rel="noreferrer"
-        className="mt-3 inline-block text-[10px] uppercase tracking-[0.35em] text-current opacity-70 transition-opacity hover:opacity-100"
+        className="mt-6 inline-block text-[11px] uppercase tracking-[0.3em] font-medium text-ink/75 transition-colors hover:text-ink"
       >
         Follow @invitestory.in on Instagram
       </a>

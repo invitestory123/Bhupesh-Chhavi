@@ -11,7 +11,7 @@ export const invitation = {
     groomParents: "Mrs. Parveen Rani & Mr. Tarsem Bansal",
     bride: "Chhavi",
     brideShort: "Chhavi",
-    brideParents: "Mrs. Sarita Mittal & Mr. Roshan Lal Mittal",
+    brideParents: "MRS. SARITA MITTAL & MR. ROSHAN LAL MITTAL",
     hashtag: "#BhupeshWedsChhavi",
   },
   invite: {
@@ -46,19 +46,19 @@ export const invitation = {
   },
   story: [
     {
-      year: "2024",
+      year: "September 2026",
       title: "The First Chapter",
       text: "A serendipitous meeting, shared smiles, and the beginning of a beautiful journey together.",
       image: "story-2",
     },
     {
-      year: "2025",
+      year: "October 2026",
       title: "Growing Together",
       text: "Countless cherished moments, mutual affection, and two families coming together with joy.",
       image: "story-3",
     },
     {
-      year: "2026",
+      year: "November 2026",
       title: "The Wedding Day",
       text: "Surrounded by our loved ones and blessings, we unite our lives in sacred matrimony.",
       image: "story-1",

@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-const heroArch = "https://media.invitestory.in/sage-parchment/src/assets/hero-arch.jpg";
+import heroArch from "@/assets/hero-arch.jpg";
 import { invitation } from "@/config/invitation";
 import { AuroraBackdrop } from "./AuroraBackdrop";
 import { useOpened } from "./OpenGate";
@@ -37,7 +37,7 @@ export function Hero() {
       </motion.div>
 
       {/* Fixed bottom gradient to guarantee seamless transition to next section */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-72 bg-gradient-to-t from-parchment via-parchment/95 via-60% to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-80 sm:h-96 bg-gradient-to-t from-parchment via-parchment/95 via-50% to-transparent" />
 
       <motion.div
         style={{ y: textY }}
@@ -47,7 +47,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={opened ? { opacity: 1, y: 0 } : false}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-[0.7rem] tracking-[0.42em] text-ink/70 uppercase"
+          className="inline-block max-w-sm rounded-full bg-parchment/85 px-4 py-1.5 text-xs sm:text-sm font-medium tracking-[0.22em] text-pine uppercase border border-gold/45 shadow-xs backdrop-blur-xs"
         >
           {invite.kicker}
         </motion.p>
@@ -70,9 +70,9 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={opened ? { opacity: 1 } : false}
             transition={{ duration: 1, delay: 0.6 }}
-            className="mt-2 text-xs text-ink/75"
+            className="mt-2 text-xs font-medium tracking-wider text-ink/85 uppercase"
           >
-            (D/o. {couple.brideParents})
+            (D/O. {couple.brideParents})
           </motion.p>
         )}
 

@@ -71,6 +71,16 @@ export function Details() {
               <CalendarPlus className="size-4 transition-transform group-hover:rotate-6" />
               Add to calendar
             </a>
+            {"sehraBandi" in invitation && invitation.sehraBandi?.url && (
+              <a
+                href={invitation.sehraBandi.url}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-gold/60 py-3 text-[0.65rem] tracking-[0.2em] text-ink/75 uppercase transition-colors hover:bg-gold/10"
+              >
+                Directions: Sehra Bandi (Residence)
+              </a>
+            )}
             <a
               href={directionsUrl()}
               target="_blank"
@@ -79,16 +89,6 @@ export function Details() {
             >
               Directions: The Grand Mirage
             </a>
-            {"sehraBandi" in invitation && invitation.sehraBandi?.url && (
-              <a
-                href={invitation.sehraBandi.url}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-gold/40 py-2.5 text-[0.65rem] tracking-[0.2em] text-ink/70 uppercase transition-colors hover:bg-gold/10"
-              >
-                Directions: Sehra Bandi (Residence)
-              </a>
-            )}
           </div>
         </div>
       </Reveal>

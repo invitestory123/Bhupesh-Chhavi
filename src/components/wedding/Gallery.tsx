@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
-const heroArch = "https://media.invitestory.in/sage-parchment/src/assets/hero-arch.jpg";
-const story1 = "https://media.invitestory.in/sage-parchment/src/assets/story-1.jpg";
-const story2 = "https://media.invitestory.in/sage-parchment/src/assets/story-2.jpg";
-const story3 = "https://media.invitestory.in/sage-parchment/src/assets/story-3.jpg";
+import heroArch from "@/assets/hero-arch.jpg";
+import story1 from "@/assets/story-1.jpg";
+import story2 from "@/assets/story-2.jpg";
+import story3 from "@/assets/story-3.jpg";
 import { Reveal } from "./Reveal";
 
 const PHOTOS = [
-  { src: story2, alt: "The couple in a lotus garden" },
-  { src: story1, alt: "The couple seated under a golden mandap" },
-  { src: story3, alt: "Mehendi and haldi celebrations" },
-  { src: heroArch, alt: "The couple beneath an ornate golden arch" },
+  { src: story2, alt: "The Varmala ceremony with Hindu bride and groom exchanging floral garlands" },
+  { src: story1, alt: "The sacred Hindu wedding ceremony and pheras before the holy Agni in the mandap" },
+  { src: story3, alt: "Joyful traditional Haldi and Mehendi celebrations with marigolds" },
+  { src: heroArch, alt: "Royal Hindu bride and groom adorned in traditional bridal attire under an ornate arch" },
 ];
 
 export function Gallery() {

@@ -1,5 +1,5 @@
 import { Navigation } from "lucide-react";
-const mapPreview = "https://media.invitestory.in/sage-parchment/src/assets/map-preview.jpg";
+import mapPreview from "@/assets/map-preview.jpg";
 import { invitation } from "@/config/invitation";
 import { directionsUrl, mapsUrl } from "@/lib/wedding";
 import { Reveal } from "./Reveal";
@@ -40,24 +40,24 @@ export function Venue() {
         <p className="mt-2 text-sm text-ink/70">{venue.address}</p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          {"sehraBandi" in invitation && invitation.sehraBandi?.url && (
+            <a
+              href={invitation.sehraBandi.url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-gold/60 px-5 py-3 text-[0.65rem] tracking-[0.2em] text-ink/80 uppercase transition-colors hover:bg-gold/10 active:scale-95"
+            >
+              Directions: Sehra Bandi
+            </a>
+          )}
           <a
             href={directionsUrl()}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-gold/60 px-6 py-3 text-[0.65rem] tracking-[0.24em] text-ink/80 uppercase transition-colors hover:bg-gold/10 active:scale-95"
           >
-            Get directions
+            Directions: The Grand Mirage
           </a>
-          {"sehraBandi" in invitation && invitation.sehraBandi?.url && (
-            <a
-              href={invitation.sehraBandi.url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-5 py-3 text-[0.65rem] tracking-[0.2em] text-ink/70 uppercase transition-colors hover:bg-gold/10 active:scale-95"
-            >
-              Sehra Bandi Location
-            </a>
-          )}
         </div>
       </Reveal>
     </section>

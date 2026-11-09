@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import jaali from "@/assets/jaali.jpg";
-const gatePanel = "https://media.invitestory.in/sage-parchment/src/assets/gate-panel.jpg";
+import gatePanel from "@/assets/gate-panel.jpg";
 import { invitation } from "@/config/invitation";
 
 const OpenedContext = createContext(false);
@@ -87,7 +87,7 @@ function Opener({ opened, onOpen }: { opened: boolean; onOpen: () => void }) {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-[0.62rem] tracking-[0.45em] text-gold uppercase"
+          className="max-w-xs text-xs sm:text-sm tracking-[0.22em] text-parchment font-medium uppercase drop-shadow-[0_2px_5px_rgba(0,0,0,0.9)]"
         >
           {invite.kicker}
         </motion.p>

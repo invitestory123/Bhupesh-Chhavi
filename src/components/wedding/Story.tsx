@@ -1,6 +1,6 @@
-const story1 = "https://media.invitestory.in/sage-parchment/src/assets/story-1.jpg";
-const story2 = "https://media.invitestory.in/sage-parchment/src/assets/story-2.jpg";
-const story3 = "https://media.invitestory.in/sage-parchment/src/assets/story-3.jpg";
+import story1 from "@/assets/story-1.jpg";
+import story2 from "@/assets/story-2.jpg";
+import story3 from "@/assets/story-3.jpg";
 import { invitation } from "@/config/invitation";
 import { Reveal } from "./Reveal";
 
@@ -44,7 +44,7 @@ export function Story() {
                     </div>
                   </div>
                   <div className={`mt-4 sm:mt-0 sm:w-1/2 ${i % 2 ? "sm:text-right" : ""}`}>
-                    <p className="text-[0.6rem] tracking-[0.35em] text-gold uppercase">
+                    <p className="text-[0.68rem] tracking-[0.22em] text-gold uppercase font-medium">
                       {item.year}
                     </p>
                     <h3 className="mt-2 font-display text-2xl text-pine">{item.title}</h3>
